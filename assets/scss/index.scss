@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+@import "common";
+
+.area{
+    position: relative;
+    width: 320px;
+    height: 300px;
+    margin: 100px auto 0;
+    background:#2719B2;
+}
+#target{
+    position: absolute;
+    top:100px;
+    left:100px;
+    width: 100px;
+    height: 100px;
+    background: #888888;
+}
