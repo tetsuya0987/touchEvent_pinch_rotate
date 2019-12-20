@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <meta name="viewport" content="width=320,initial-scale=1.0,minimum-scale=1.0">
 <!--page info-->
 <title>無題ドキュメント</title>
 <meta name="description" content="" />
@@ -27,6 +27,8 @@
 <link rel="stylesheet" type="text/css" href="assets/css/index.css" media="all" />
 <!--js-->
 <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.js"></script>
+<script src="http://ricostacruz.com/jquery.transit/jquery.transit.min.js"></script>
 <script type="text/javascript" src="assets/js/hammer.js"></script>
 <script type="text/javascript" src="assets/js/jquery.hammer.js"></script>
 <script type="text/javascript" src="assets/js/easing.js"></script>
@@ -41,12 +43,41 @@
 </head>
 
 <body>
+   <!--画面の拡大を禁止-->
+    <script>
+        document.documentElement.addEventListener('touchstart', function (event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, false);
+
+        var lastTouchEnd = 0;
+        document.documentElement.addEventListener('touchend', function (event) {
+            var now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
+
 
 <div class="area">
     <div id="target" class="pinchout"></div>
+    <div id="target2"></div>
 
 </div>
     <div class="text"></div>
-
+    <div class="gesture"></div>
+    <div class="eventType"></div>
+    <div class="r"></div>
+    <div class="n"></div>
+    <div class="height"></div>
+    <div class="width"></div>
+    <div class="scale"></div>
+    <div class="touch01"></div>
+    <div class="touch02"></div>
+    <div class="top"></div>
+    <div class="left"></div>
 </body>
 </html>

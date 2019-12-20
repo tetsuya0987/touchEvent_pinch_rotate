@@ -1,7 +1,10 @@
 @charset "utf-8";
 
 @import "common";
-
+body{
+    width: 320px;
+    margin:  auto;
+}
 .area{
     position: relative;
     width: 320px;
@@ -15,5 +18,19 @@
     left:100px;
     width: 100px;
     height: 100px;
-    background: #888888;
+    background: #8888FF;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+
+#target2{
+    position: absolute;
+    top:75px;
+    left:75px;
+    width: 150px;
+    height: 150px;
+    background: #FF8888;
+    opacity: 0.5;
+    z-index: 0;
 }
